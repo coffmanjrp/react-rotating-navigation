@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;500;700;900&display=swap');
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: #333;
+  font-family: 'Lato', sans-serif;
+  color: #222;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.container {
+  padding: 3.125rem;
+  width: 100vw;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  background: #fafafa;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  &.show-nav {
+    transform: rotate(-20deg);
+    + nav li {
+      transform: translateX(0);
+      transition-delay: 0.3s;
+    }
+    .circle {
+      transform: rotate(-70deg);
+    }
   }
-  to {
-    transform: rotate(360deg);
+  img {
+    max-width: 100%;
+  }
+}
+
+.circle {
+  position: relative;
+  width: 12.5rem;
+  height: 12.5rem;
+  background: #ff7979;
+  border-radius: 50%;
+  transition: transform 0.5s linear;
+  &-container {
+    position: fixed;
+    top: -6.25rem;
+    left: -6.25rem;
+  }
+  button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 6.25rem;
+    background: transparent;
+    border: none;
+    font-size: 1.625rem;
+    color: #fff;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    &.open {
+      left: 60%;
+    }
+    &.close {
+      top: 60%;
+      transform: rotate(90deg);
+      transform-origin: top left;
+    }
+  }
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  bottom: 2.5rem;
+  z-index: 100;
+  ul {
+    padding-left: 1.875rem;
+    list-style-type: none;
+    li {
+      margin: 2.5rem 0;
+      text-transform: uppercase;
+      transform: translateX(-100%);
+      transition: transform 0.4s ease-in;
+      + li {
+        margin-left: 0.9375rem;
+        transform: translateX(-150%);
+        + li {
+          margin-left: 1.875rem;
+          transform: translateX(-200%);
+        }
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.4s ease;
+        &:hover {
+          color: #999;
+        }
+        i {
+          margin-right: 0.625rem;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  margin: 3.125rem auto;
+  max-width: 62.5rem;
+  small {
+    color: #555;
+    font-style: italic;
+  }
+  p {
+    margin-top: 1.25rem;
+    color: #333;
+    line-height: 1.5;
+  }
+  h3 {
+    margin: 1.25rem 0 1rem;
   }
 }
