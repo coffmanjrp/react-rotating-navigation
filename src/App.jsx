@@ -1,17 +1,21 @@
-import { FaHome, FaUserAlt, FaEnvelope, FaTimes, FaBars } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaBars, FaEnvelope, FaHome, FaTimes, FaUserAlt } from 'react-icons/fa';
+import Icon from './components/Icon';
 import './App.scss';
 
 function App() {
+  const [showNav, setShowNav] = useState(false);
+
   return (
     <>
-      <div className="container">
+      <div className={`container${showNav ? ' show-nav' : ''}`}>
         <div className="circle-container">
           <div className="circle">
-            <button className="close">
-              <FaTimes />
+            <button className="close" onClick={() => setShowNav(false)}>
+              <Icon icon={<FaTimes />} />
             </button>
-            <button className="open">
-              <FaBars />
+            <button className="open" onClick={() => setShowNav(true)}>
+              <Icon icon={<FaBars />} />
             </button>
           </div>
         </div>
@@ -54,19 +58,19 @@ function App() {
         <ul>
           <li>
             <a href="#!">
-              <FaHome />
+              <Icon icon={<FaHome />} className="icon" />
               Home
             </a>
           </li>
           <li>
             <a href="#!">
-              <FaUserAlt />
+              <Icon icon={<FaUserAlt />} className="icon" />
               About
             </a>
           </li>
           <li>
             <a href="#!">
-              <FaEnvelope />
+              <Icon icon={<FaEnvelope />} className="icon" />
               Contact
             </a>
           </li>
