@@ -20,7 +20,7 @@ function App() {
           </div>
         </div>
         <div className="content">
-          <h1>Amazing Article</h1>
+          <h1>Some Article</h1>
           <small>coffmanjrp</small>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et laborum
@@ -36,9 +36,9 @@ function App() {
             tempora delectus temporibus rem rerum possimus. Sint voluptatum
             optio magnam similique mollitia quasi quae consequuntur?
           </p>
-          <h3>My Dog</h3>
+          <h3>About My Dog</h3>
           <img
-            src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&amp;fit=crop&amp;w=2100&amp;q=80"
+            src="https://images.unsplash.com/photo-1600077106724-946750eeaf3c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2100&amp;q=80"
             alt="doggy"
           />
           <p>
